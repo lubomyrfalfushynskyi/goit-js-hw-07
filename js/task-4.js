@@ -11,10 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = form.elements.password.value;
 
     if (email === "" || password === "") {
-      return console.log("Please fill in all the fields!");
+      alert("Please fill in all the fields!");
+      return;
     }
 
-    console.log(`Login: ${email}, Password: ${password}`);
+    console.log({ email, password });
     form.reset();
   }
 });

@@ -26,16 +26,17 @@ const images = [
 ];
 
 const photoList = document.querySelector('.gallery');
+const fragment = document.createDocumentFragment();
 
-for (const image of images){
+for (const image of images) {
   const li = document.createElement('li');
   const img = document.createElement('img');
-
-  photoList.appendChild(li);
-
+  
   img.src = image.url;
   img.alt = image.alt;
-
-  li.appendChild(img);
   
+  li.appendChild(img);
+  fragment.appendChild(li);
 }
+
+photoList.append(fragment);
